@@ -1,0 +1,29 @@
+#version: '3.9'
+
+services:
+  db:
+    image: postgres:15.3-bullseye
+    container_name: postgres15
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - "/data/DockerData/db/postgres15/data:/var/lib/postgresql/data"
+    environment:
+      - "POSTGRES_PASSWORD_FILE=/run/secrets/db_passw_dev"
+      - "POSTGRES_DB=blog_db"
+    secrets:
+      - db_passw_dev
+    networks:
+      postgres_net:
+    deploy:
+      resources:
+        limits:
+          memory: 1G # Container uses 2048M in total (swap=1024M)
+
+secrets:
+  db_passw_dev:
+    file: /code/common/secrets/db_passw_dev.txt
+
+networks:
+  postgres_net:

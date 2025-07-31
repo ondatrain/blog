@@ -1,0 +1,109 @@
+# Archivos específicos de Django
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+/static/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Entornos virtuales
+venv/
+ENV/
+.env/
+.venv/
+
+# Archivos de entorno
+.env
+.env.*
+!.env.example
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+
+# Node.js / Frontend
+/node_modules/
+/assets/bundles/
+/webpack-stats.json
+
+# Archivos de sistema
+.DS_Store
+
+# Archivos de Wagtail específicos
+/search_index/
+
+# Archivos de Python
+*.py[co]
+.python-version
+
+# Archivos de coverage y testing
+.coverage
+htmlcov/
+.pytest_cache/
+*.cover
+*.mo
+*.pot
+*.sqlite
+*.db
+
+# Archivos de documentación
+docs/_build/
+.~*
+*.odt
+!dev_steps.odt
+!prod_steps.odt
+
+# Archivos de deployment
+*.env
+*.key
+*.cert
+*.pem
+
+# Archivos generados por Docker
+docker-compose.override.yml
+
+# Archivos de PaaS (Heroku, etc.)
+Procfile
+
+# Archivos de Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de package/build/distribución
+*.egg
+*.egg-info
+/dist/
+/build/
+/sdist/
+/wheels/
+*.whl
+
+# Archivos de caché de pip
+.pip-cache/
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de SQL
+*.sql
+*.dump
+
+# Archivos de pre-commit
+.pre-commit-config.yaml
+
+# Archivos temporales
+*.tmp
+*.temp
