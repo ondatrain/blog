@@ -1,13 +1,34 @@
 from .base import *
+import environ
+import os
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-9%*ectn(j!8*%p(*=9#qp3e49@hxjyajoqngx96u%j&ot#-im_"
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env.dev'))
 
-# SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["*"]
+# False if not in os.environ because of casting above
+DEBUG = env('DEBUG')
+
+# Raises Django's ImproperlyConfigured
+# exception if SECRET_KEY not in os.environ
+SECRET_KEY = env('SECRET_KEY')
+
+# Parse DATABASE_URL connection url strings
+DATABASES = {
+    # ImproperlyConfigured exception if DATABASE_URL not found
+    #
+    # The db() method is an alias for db_url().
+    'default': env.db(),
+}
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', cast=str)
+
+# Habilita django-extensions en desarrollo
+INSTALLED_APPS.append('django_extensions')
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 

@@ -1,3 +1,5 @@
 wheel
-Django>=5.2,<5.3
+django>=5.2,<5.3
 wagtail>=7.0,<7.1
+psycopg2-binary
+django-environ

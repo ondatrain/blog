@@ -29,6 +29,8 @@ django==5.2.4
     #   djangorestframework
     #   laces
     #   wagtail
+django-environ==0.12.0
+    # via -r requirements.in
 django-filter==25.1
     # via wagtail
 django-modelcluster==6.4
@@ -63,6 +65,8 @@ pillow==11.3.0
     #   wagtail
 pillow-heif==1.0.0
     # via willow
+psycopg2-binary==2.9.10
+    # via -r requirements.in
 requests==2.32.4
     # via wagtail
 soupsieve==2.7
