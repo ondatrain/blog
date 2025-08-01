@@ -22,6 +22,12 @@ services:
         sync: false
       - key: DJANGO_SUPERUSER_PASSWORD
         sync: false
+      - key: LOG_ENABLED
+        sync: false
+      - key: LOG_CONSOLE_LEVEL
+        sync: false
+      - key: REMOTE_HOSTED_BLOG
+        sync: false
       - key: PYTHON_VERSION
         value: 3.12.3
       - key: SECRET_KEY
