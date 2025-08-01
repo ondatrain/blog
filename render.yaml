@@ -1,0 +1,29 @@
+services:
+  - type: web
+    plan: free
+    region: ohio
+    name: ondatrain
+    branch: main
+    healthCheckPath: /
+    maxShutdownDelaySeconds: 90
+    runtime: python
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn config.wsgi:application'
+    # Declarar las variables "sync: false" en el dashboard de Render
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: CERT_DIR
+        sync: false
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: DJANGO_SUPERUSER_USERNAME
+        sync: false
+      - key: DJANGO_SUPERUSER_EMAIL
+        sync: false
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: SECRET_KEY
+        generateValue: true

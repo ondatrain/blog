@@ -1,1 +1,1 @@
-SETTINGS_FILE=config.settings.dev
+SETTINGS_FILE=config.settings.production
