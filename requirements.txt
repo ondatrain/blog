@@ -10,6 +10,8 @@ asgiref==3.9.1
     # via django
 beautifulsoup4==4.13.4
     # via wagtail
+brotli==1.1.0
+    # via whitenoise
 certifi==2025.7.14
     # via requests
 charset-normalizer==3.4.2
@@ -53,12 +55,16 @@ et-xmlfile==2.0.0
     # via openpyxl
 filetype==1.2.0
     # via willow
+gunicorn==23.0.0
+    # via -r requirements.in
 idna==3.10
     # via requests
 laces==0.1.2
     # via wagtail
 openpyxl==3.1.5
     # via wagtail
+packaging==25.0
+    # via gunicorn
 pillow==11.3.0
     # via
     #   pillow-heif
@@ -85,6 +91,8 @@ urllib3==2.5.0
 wagtail==7.0.2
     # via -r requirements.in
 wheel==0.45.1
+    # via -r requirements.in
+whitenoise[brotli]==6.9.0
     # via -r requirements.in
 willow[heif]==1.11.0
     # via
