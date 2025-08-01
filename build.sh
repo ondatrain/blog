@@ -6,12 +6,12 @@ set -o errexit
 pip install -r requirements.txt
 
 # Convert static asset files
-python manage.py collectstatic --no-input
+python manage.py collectstatic --no-input --settings config.settings.production
 
 # Apply any outstanding database migrations
-python manage.py migrate
+python manage.py migrate --settings config.settings.production
 
 # Create Django superuser
 # This environment variables MUST be supplied on setup:
 # DJANGO_SUPERUSER_USERNAME, DJANGO_SUPERUSER_EMAIL, DJANGO_SUPERUSER_PASSWORD
-python manage.py createsuperuser --noinput
+python manage.py createsuperuser --noinput --settings config.settings.production

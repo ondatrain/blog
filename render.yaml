@@ -27,7 +27,9 @@ services:
       - key: LOG_CONSOLE_LEVEL
         sync: false
       - key: REMOTE_HOSTED_BLOG
-        sync: false
+        value: False
+      - key: DEBUG
+        value: False
       - key: PYTHON_VERSION
         value: 3.12.3
       - key: SECRET_KEY
